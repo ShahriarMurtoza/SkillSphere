@@ -25,10 +25,10 @@ const Navbar = () => {
 
         <div className="flex gap-4">
           <ul className="flex items-center  text-sm gap-5">
-            <li>
+            <li className="font-black  text-md">
               <Link href={"/signup"}>SignUp</Link>
             </li>
-            <li>
+            <li className="font-black  text-md">
               <Link href={"/signin"}>SignIn</Link>
             </li>
           </ul>

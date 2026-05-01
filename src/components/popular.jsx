@@ -5,8 +5,8 @@ const Popular = async() => {
     const topCourses= data.slice(0,3);
     return (
         <div>
-            <h1 className="text-3xl font-bold mt-5 text-center">Popular Courses</h1>
-            <div>
+            <h1 className="text-3xl font-bold mt-5 mb-5 text-center">Popular Courses</h1>
+            <div className="grid grid-cols-3 gap-3">
                 {topCourses.map(course => <Popcard key={course.id} course={course}/>)
                 }
             </div>
