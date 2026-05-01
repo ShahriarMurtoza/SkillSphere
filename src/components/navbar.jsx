@@ -8,10 +8,10 @@ const Navbar = () => {
       <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
         <div className="flex gap-2 items-center">
           
-          <h3 className="font-black text-lg">SkillSphere</h3>
+          <h3 className="font-black  text-2xl">SkillSphere</h3>
         </div>
 
-        <ul className="flex items-center gap-5 text-sm">
+        <ul className="flex items-center gap-5 text-md">
           <li>
             <Link href={"/"}>Home</Link>
           </li>
