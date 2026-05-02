@@ -9,11 +9,11 @@ const Detailspage = async ({params}) => {
     
     return (
         <div>
-            {/* <Image 
+            <Image 
              src={course?.image}
              alt={course.title}
               width={600} height={400} 
-              className="rounded-lg mb-4" /> */}
+              className="rounded-lg mb-4" />
 
             <h1>Name:{course.title}</h1>
             <h3>Instructor: {course.instructor}</h3>
