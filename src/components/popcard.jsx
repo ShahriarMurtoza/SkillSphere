@@ -1,11 +1,12 @@
 import { Button, Card } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const Popcard = ({ course }) => {
     return (
-      <Card className="border items-center ">
-        <div className="h-full w-full ">
+      <Card className=" border items-center ">
+        <div className=" h-full w-full ">
             <Image className="w-full h-48 object-cover"
              src={course.image}
              
@@ -31,7 +32,11 @@ const Popcard = ({ course }) => {
           </span>
           
           </div>
-          <Button variant="outline" className= {'w-full px-2 py-2'}>View  Details</Button>
+          <Link href={`/all-course/${course.id}`} >
+            <Button variant="outline" className={"w-full "}>  View Details
+            </Button>
+            
+          </Link>
       </Card>
           );
 };
