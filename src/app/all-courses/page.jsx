@@ -5,7 +5,7 @@ import Popcard from "@/components/popcard";
 const allcoursesPage = async() => {
     const res = await fetch("https://skill-sphere-zeta-gray.vercel.app/data.json");
     const data = await res.json();
-    console.log(data);n
+    console.log(data);
     return (
         <div>
             <h1 className="text-3xl text-center">All Courses</h1>
