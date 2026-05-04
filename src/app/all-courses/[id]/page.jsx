@@ -1,68 +1,55 @@
-import { Button } from "@heroui/react";
 import Image from "next/image";
 
 
-const allcoursesPage = async() => {
-    const res = await fetch("https://skill-sphere-zeta-gray.vercel.app/data.json");
-    const data = await res.json();
-    return (
-        <div>
-            <h1 className="text-3xl text-center">All Courses</h1>
 
-            <div className="grid grid-cols-3 gap-3">
-                {data.map(course => (
-                    <div key={course.id}  className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border">
-                       {/* Image Section */}
-                         <div className="relative w-full h-48 overflow-hidden">
-                           <Image
-                            src={`${course.image}?auto=format&fit=crop&w=800&q=80`}
-                            //  src={course.image}
-                             fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            height={300}
-                             width={300}
-                             alt={course.title}
-                             className="object-cover rounded-xl"
-                           />
-                       
-                           {/* Rating badge */}
-                           <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-lg">
-                             ⭐ {course.rating}
-                           </div>
-                         </div>
-                       
-                         {/* Content */}
-                         <div className="p-5 space-y-3">
-                       
-                           {/* Title */}
-                           <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition">
-                             {course.title}
-                           </h3>
-                       
-                           {/* Instructor */}
-                           <p className="text-sm text-gray-500">
-                             by {course.instructor}
-                           </p>
-                       
-                           {/* Meta Info */}
-                           <div className="flex justify-between items-center text-sm text-gray-600">
-                                 <span>{course.duration}</span>
-                                 <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-md text-xs">
-                                   {course.level}
-                                 </span>
-                               </div>
-                           
-                               {/* Button */}
-                               <Button className="w-full mt-3 bg-black text-white hover:bg-gray-800 rounded-xl">
-                                 View Details
-                               </Button>
-                           
-                             </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+const CourseDetailsPage = async ({params}) => {
+
+  const {id} = await params;
+    const res = await fetch('https://skill-sphere-zeta-gray.vercel.app/data.json')
+    const courses = await res.json()
+  
+    const course = courses.find(c => c.id == id)
+
+  return (
+   <div className="max-w-md mx-auto bg-white border border-gray-200 rounded-2xl shadow-md p-6 m-9 space-y-3 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 cursor-pointer">
+                        
+   
+     <h1 className="text-xl font-bold text-gray-800">
+       {course.title}
+     </h1>
+        <Image
+          src={course.image}
+          alt={course?.title}
+          width={400}
+          height={200}
+          className="object-cover rounded-lg"
+        />
+     <p className="text-sm text-gray-500">
+       Instructor: <span className="text-gray-700 font-medium">{course.instructor}</span>
+     </p>
+   
+     <p className="text-gray-600 text-sm leading-relaxed">
+       {course.description}
+     </p>
+   
+     <p className="text-sm text-gray-600">
+       ⏱ {course.duration}
+     </p>
+   
+     <p className="text-sm text-blue-600 font-medium">
+       🎯 {course.level}
+     </p>
+   
+     <p className="text-sm text-yellow-500 font-medium">
+       ⭐ {course.rating}
+     </p>
+   
+     <p className="text-sm text-gray-600">
+       📂 {course.category}
+     </p>
+   
+   </div>
+  );
 };
 
-export default allcoursesPage;
+export default CourseDetailsPage;

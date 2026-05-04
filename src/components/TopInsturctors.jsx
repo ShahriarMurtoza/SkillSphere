@@ -38,8 +38,11 @@ const TopInstructor = () => {
 
       {/* Title */}
       <h3 className="text-center text-3xl md:text-4xl font-bold mb-10">
-        🏆 Top Instructors
+         Top Instructors
       </h3>
+      <p className="text-center text-gray-600 mb-10">
+        Meet our top instructors who are experts in their respective fields and are dedicated to helping you succeed.
+      </p>
 
       {/* Grid */}
       <div className="grid md:grid-cols-3 gap-6">
@@ -81,9 +84,7 @@ const TopInstructor = () => {
                   ⭐ {ins.rating}
                 </span>
 
-                <button className="text-sm text-blue-600 hover:underline">
-                  View Profile
-                </button>
+                
               </div>
 
             </div>

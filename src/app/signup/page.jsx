@@ -11,6 +11,8 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+
 
 export default function SignUpPage() {
 
@@ -27,7 +29,10 @@ export default function SignUpPage() {
             email,
             password,
             image,
+            
         })
+
+        console.log({data, error});
       if(!error) {
               router.push('/')
           }  

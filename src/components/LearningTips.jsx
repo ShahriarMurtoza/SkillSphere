@@ -6,14 +6,17 @@ const LearningTips = () => {
 
       {/* Title */}
       <h3 className="text-center text-3xl md:text-4xl font-bold mb-10 animate__animated animate__fadeInDown">
-        📌 Learning Tips
+         Learning Tips
       </h3>
+      <p className="text-center text-gray-600 mb-10 animate__animated animate__fadeInDown">
+        Discover effective strategies to enhance your learning experience and achieve better academic results.
+      </p>
 
       {/* Cards */}
       <div className="grid md:grid-cols-2 gap-6">
 
         {/* Study Techniques */}
-        <div className="border rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 bg-white animate__animated animate__fadeInLeft">
+        <div className="border rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 bg-white  animate__animated animate__fadeInLeft">
           <h4 className="text-xl font-semibold mb-3 text-blue-600">
             📚 Study Techniques
           </h4>

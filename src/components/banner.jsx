@@ -1,4 +1,5 @@
 'use client';
+import "animate.css";
 
 import Image from "next/image";
 
@@ -21,11 +22,11 @@ const Banner = () => {
           
           <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center px-4 max-w-3xl">
       
-            <h3 className="text-white text-3xl md:text-5xl font-bold mb-4">
+            <h3 className="text-white text-3xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
               Upgrade your skill today
             </h3>
       
-            <p className="text-gray-200 text-sm md:text-lg leading-relaxed">
+            <p className="text-gray-200 text-sm md:text-lg leading-relaxed animate__animated animate__fadeInDown">
               In an era where key skills and competencies rise and fall out of relevance at a faster rate than ever before, 
               professional development has become a key aspect of every organizational strategy.
             </p>

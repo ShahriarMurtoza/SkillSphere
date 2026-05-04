@@ -1,4 +1,6 @@
 "use client";
+
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,6 +13,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { GrGoogle } from "react-icons/gr";
+import { toast } from "react-toastify";
 
 export default function SignInPage() {
   const onSubmit = async (e) => {
@@ -22,9 +25,9 @@ export default function SignInPage() {
             
             email,
             password,
-            callbackURL:'/'
-        })
-      
+            callbackURL:"/",
+        });
+      console.log({data, error});
   };
 
     const handlGoogleSignIn = async () => {
@@ -33,6 +36,20 @@ export default function SignInPage() {
             })
           }
         
+          // const handleSubmit = (e) => {
+          //   e.preventDefault();
+          
+          //     try {
+          //     // your submit logic here
+          
+          //     toast.success("Submitted successfully ✅");
+          //     } catch (error) {
+          //     toast.error("Submission failed ❌");
+          //     }
+          // };
+                      
+
+
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -85,10 +102,13 @@ export default function SignInPage() {
         </TextField>
 
         <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
+          
+              <Button  type="submit">
+                <Check />
+                  Submit
+              </Button>
+          
+          
           <Button type="reset" variant="secondary">
             Reset
           </Button>
